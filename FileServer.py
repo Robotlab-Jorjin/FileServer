@@ -69,7 +69,7 @@ class FileServer:
 
 def StartServer():
     config = hypercorn.config.Config()
-    config.bind = "yu46656.ddns.net:15473"
+    config.bind = "jorjinapp.ddns.net:15385"
     # config.certfile = f"{DIR}/file_server_cert.pem"
     # config.keyfile = f"{DIR}/file_server_key.pem"
 

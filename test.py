@@ -33,7 +33,7 @@ def main1():
 
 @typechecked
 async def F(pdf_data: bytes):
-    file_server_url = "http://yu46656.ddns.net:15473"
+    file_server_url = "http://jorjinapp.ddns.net:15385"
 
     url = f"{file_server_url}/convert_pdf_to_jpegs"
 
@@ -49,7 +49,7 @@ async def F(pdf_data: bytes):
 
     timeout = aiohttp.ClientTimeout(total=datetime.timedelta(hours=1).seconds)
 
-    async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False), timeout=timeout) as session:
+    async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(ssl=False), timeout=timeout) as session:
         async with session.get(url, json=request_data, timeout=timeout) as response:
             response_data = await response.json()
 
